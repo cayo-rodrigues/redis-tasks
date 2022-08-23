@@ -33,3 +33,15 @@ Lista todas as tarefas.
 ### `POST /tasks/`
 
 Cria uma nova tarefa.
+
+Dados necessários:
+
+- `description`: Uma string descrevendo a tarefa
+- `priority`: O nível de prioridade. Varia de `1` a `5`.
+  - `1`: Extra
+  - `2`: Baixo
+  - `3`: Médio
+  - `4`: Alto
+  - `5`: Urgente
+- `doing`: Um booleano. Define se a tarefa está em andamento. Padrão `False`.
+- `done`: Um booleano. Define se a tarefa foi concluída. Padrão `False`.
