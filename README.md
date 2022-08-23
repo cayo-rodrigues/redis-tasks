@@ -22,7 +22,7 @@ Feito isso, para rodar a API basta usar o seguinte comando:
 python manage.py runserver
 ```
 
-Se assim desejar, pode usar a interface gráfica do _Django Rest Framework_ ou então algum outro método para fazer as requisições. Se estiver usando o [Insomnia](https://insomnia.rest/download), você pode usar [este arquivo json](), que já vem com duas requisições configuradas (é o necessário).
+Se assim desejar, pode usar a interface gráfica do _Django Rest Framework_ ou então algum outro método para fazer as requisições. Se estiver usando o [Insomnia](https://insomnia.rest/download), você pode usar [este arquivo json](https://drive.google.com/file/d/1H20JVSmUWPVq6iAz1dxTtYyULnUX16VI/view?usp=sharing), que já vem com duas requisições configuradas (é o necessário).
 
 ## Rotas
 
