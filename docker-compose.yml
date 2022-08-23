@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  rdb:
+    image: redis:latest
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - 6379:6379
+    command: redis-server --save 20 1 --loglevel warning --requirepass $REDIS_PASSWORD
+    volumes:
+      - redisdata:/var/lib/redis/data
+
+  web:
+    build: .
+    env_file: .env
+    command:
+      bash -c 'while !</dev/tcp/rdb/6379; do sleep 1; done; python manage.py migrate && python manage.py runserver 0.0.0.0:8000'
+    volumes:
+      - .:/code
+    stdin_open: true
+    tty: true
+    ports:
+      - 8000:8000
+    depends_on:
+      - rdb
+
+volumes:
+  redisdata:
